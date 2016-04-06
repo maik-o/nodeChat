@@ -5,6 +5,7 @@ var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 var usernames = {};
 var numUsers = 0;
+var port = process.env.PORT || 5000;
 app.set( __dirname + '/views');
 app.set('view engine', 'jade');
 app.set('view options', {layout: false});
