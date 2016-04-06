@@ -15,7 +15,9 @@ app.set('view options', {layout: false});
 app.get('/', function(req, res){
 	res.render('home.jade');
 });
-server.listen(80);
+server.listen(port, function(){
+	console.log('Our app is running on http://localhost:'+ port);
+});
 
 io.sockets.on('connection', function (socket){
 	//events go here
