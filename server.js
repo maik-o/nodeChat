@@ -15,7 +15,7 @@ app.set('view options', {layout: false});
 app.get('/', function(req, res){
 	res.render('home.jade');
 });
-server.listen(3000);
+server.listen(80);
 
 io.sockets.on('connection', function (socket){
 	//events go here
