@@ -1,3 +1,4 @@
+//Following example code from: https://github.com/socketio/socket.io/tree/master/examples/chat
 $(function(){
 
 	var FADE_TIME = 150; // ms

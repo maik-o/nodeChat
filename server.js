@@ -1,3 +1,7 @@
+//Following some example code from https://github.com/socketio/socket.io/tree/master/examples/chat
+//begin this project with http://code.tutsplus.com/tutorials/real-time-chat-with-nodejs-socketio-and-expressjs--net-31708
+//However, that stuff is largely out of date and had to update it.
+
 var jade = require('jade');
 var express = require('express'), app = express();
 var http = require('http');
