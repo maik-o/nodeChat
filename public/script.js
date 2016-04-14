@@ -9,7 +9,8 @@ $(function(){
 	'#3b88eb', '#3824aa', '#a700ff', '#d300e7'
 	];
 
-	$("#chatControls").hide();
+	$('.chat.page').hide();
+	//$("#chatControls").hide();
 	//$("#pseudoSet").click(function(){setPseudo();});
 	//$("#submit").click(function(){sentMessage();});
 	$(window).keydown(function (event) {
@@ -51,7 +52,7 @@ $(function(){
 			socket.emit('login', $("#pseudoInput").val());
 			$('.chat.page').show();
 			$('.login.page').hide();
-			$('#pseudoSet').hide();
+			// $('#pseudoSet').hide();
 		}
 	}
 
