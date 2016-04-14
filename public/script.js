@@ -15,6 +15,7 @@ $(function(){
 	//$("#submit").click(function(){sentMessage();});
 	$(window).keydown(function (event) {
 		// When the client hits ENTER on their keyboard
+		console.log("test")
 		if (event.which === 13) {
 			if (username) {
 			sentMessage();
