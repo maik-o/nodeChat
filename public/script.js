@@ -1,6 +1,7 @@
 //Following example code from: https://github.com/socketio/socket.io/tree/master/examples/chat
 $(function(){
 
+	var username;
 	var FADE_TIME = 150; // ms
 	var TYPING_TIMER_LENGTH = 400; // ms
 	var COLORS = [
@@ -13,9 +14,8 @@ $(function(){
 	//$("#chatControls").hide();
 	//$("#pseudoSet").click(function(){setPseudo();});
 	//$("#submit").click(function(){sentMessage();});
-	$(window).keydown(function (event) {
+	$(document).keydown(function (event) {
 		// When the client hits ENTER on their keyboard
-		console.log("test")
 		if (event.which === 13) {
 			if (username) {
 			sentMessage();
@@ -49,8 +49,9 @@ $(function(){
 	}
 
 	function setPseudo(){
-		if( $('#psuedoInput').val() !=""){
-			socket.emit('login', $("#pseudoInput").val());
+		username = $("#pseudoInput").val();
+		if( username !=""){
+			socket.emit('login', username);
 			$('.chat.page').show();
 			$('.login.page').hide();
 			// $('#pseudoSet').hide();
