@@ -5,12 +5,23 @@ html
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
         script(src="/socket.io/socket.io.js")
         script(src="script.js")
+        script(src="main.css")
     body
-        div.container
+        ul.pages
+            li.chat(class=['page'])
+                div.chatArea
+                    ul.messages
+                input(type='text')#messageInput
+            li.login(class=['page'])
+                div.form
+                    h3.title What's your nickname?
+                    input(type='text')#pseudoInput
+        //  
+            div.container
             header
                 h1 A Chat application with Node.js and Socket.io
             input(type='text')#pseudoInput
-            button#pseudoSet Set Pseudo
+            button#pseudoSet Enter a nickname
             div#chatEntries
             div#chatControls
                 input(type='text')#messageInput

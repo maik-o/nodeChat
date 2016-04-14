@@ -22,12 +22,13 @@ server.listen(port, function(){
 
 io.sockets.on('connection', function (socket){
 	//events go here
-	socket.on('setPseudo', function( data ){
-		//socket.set('pseudo', data);
-		socket.username = data;
-		usernames[data] = data;
-		++numUsers;
-	});
+	var addedUser = false;
+	// socket.on('setPseudo', function( data ){
+	// 	//socket.set('pseudo', data);
+	// 	socket.username = data;
+	// 	usernames[data] = data;
+	// 	++numUsers;
+	// });
 
 	socket.on('message', function (message){
 		//socket.get('pseudo', function(error, name){
@@ -35,5 +36,32 @@ io.sockets.on('connection', function (socket){
 			socket.broadcast.emit('message', data);
 			console.log("user " + socket.username + " send this : " + message);
 		//});
+	});
+
+	socket.on('login', function(username){
+		if(addedUser) return;
+
+		socket.username = username;
+		++numUsers;
+		addedUser = true;
+
+		socket.emit('login', {
+			numUsers: numUsers
+		});
+
+		socket.broadcast.emit('user joined', {
+			username: socket.username, numUsers: numUsers
+		});
+	});
+
+	socket.on('logout', function(username){
+		if(addedUser){
+			--numUsers;
+
+			socket.broadcast.emit('user left', {
+				username: socket.username,
+				numUsers: numUsers
+			});
+		}
 	});
 });
