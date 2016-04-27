@@ -1,3 +1,5 @@
+/* Fix user-agent */
+
 * {
   box-sizing: border-box;
 }
@@ -31,7 +33,7 @@ ul {
 
 /* Pages */
 
-.container {
+.pages {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -60,7 +62,7 @@ ul {
   width: 100%;
 }
 
-.login.page .form #pseudoInput {
+.login.page .form .usernameInput {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #fff;
@@ -74,12 +76,12 @@ ul {
   font-size: 200%;
 }
 
-.login.page #pseudoInput {
+.login.page .usernameInput {
   font-size: 200%;
   letter-spacing: 3px;
 }
 
-.login.page .title, .login.page #pseudoInput {
+.login.page .title, .login.page .usernameInput {
   color: #fff;
   font-weight: 100;
 }
@@ -96,7 +98,7 @@ ul {
   font-size: 150%;
 }
 
-#messageInput {
+.inputMessage {
   font-size: 100%;
 }
 
@@ -134,7 +136,7 @@ ul {
 
 /* Input */
 
-#messageInput {
+.inputMessage {
   border: 10px solid #000;
   bottom: 0;
   height: 60px;
